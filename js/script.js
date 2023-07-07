@@ -31,7 +31,7 @@ const saveToLocalStorage = () => {
 const getWeatherData = (location, status) => {
   console.log(localData);
   fetch(
-    `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location}&aqi=no`
+    `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location}&aqi=no`
   )
     .then((res) => {
       if (res.ok) {
@@ -46,8 +46,7 @@ const getWeatherData = (location, status) => {
       dataListInfo(data, status);
     })
     .catch((err) => {
-      console.log(err);
-      alert(err);
+      alert("Lokasi tidak ditemukan");
     });
 };
 
