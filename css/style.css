@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Poppins:wght@400;500;600&display=swap');
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: "Poppins", Arial, Helvetica, sans-serif;
+}
+
+body {
+   background-color: #176B87;
+   display: flex;
+   justify-content: space-between;
+   position: relative;
+}
+
+.navigation {
+   width: 30%;
+   height: 100vh;
+   padding: 20px 10px;
+   background-color: #001C30;
+}
+
+.navigation .close {
+   text-align: right;
+   margin: 0 0 10px 0;
+}
+
+.navigation .close i {
+   display: none;
+   color: #fff;
+   font-size: 1.7rem;
+   transition: 0.2s;
+}
+
+.navigation .close i:hover {
+   color: #ff002f;
+   font-size: 1.7rem;
+}
+
+.navigation form {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+}
+
+.navigation form input {
+   width: 100%;
+   height: 50px;
+   border: none;
+   padding: 10px;
+   font-size: 1rem;
+   border-top-left-radius: 5px;
+   border-bottom-left-radius: 5px;
+}
+
+.navigation form input:focus {
+   outline: none;
+}
+
+.navigation form button {
+   padding: 15px 11px;
+   border: none;
+   color: #fff;
+   font-weight: 600;
+   border-top-right-radius: 5px;
+   border-bottom-right-radius: 5px;
+   background-color: #176B87;
+   transition: 0.2s;
+}
+
+.navigation form button:hover,
+.navigation form button:active {
+   background-color: #054a60;
+}
+
+.navigation .weather {
+   display: flex;
+   align-items: center;
+   color: #fff;
+   padding: 0 10px;
+   border-radius: 10px;
+   margin-top: 10px;
+   background-color: #176B87;
+}
+
+.weather-detail {
+   position: relative;
+}
+
+
+.menu i {
+   display: none;
+   position: absolute;
+   left: 0;
+   top: 0;
+   margin: 20px;
+   color: #fff;
+   font-size: 1.3rem;
+}
+
+.weather {
+   position: relative;
+   overflow: visible;
+}
+
+.weather .fa-star {
+   font-size: 1.5rem;
+   color: #176B87;
+   position: absolute;
+   right: 0;
+   top: 0;
+   margin: 12px 12px 0 0;
+   transition: 0.5s;
+}
+
+.weather .fa-xmark{
+   font-size: 1.3rem;
+   cursor: pointer;
+   position: absolute;
+   right: 0;
+   bottom: 0;
+   color: #fff;
+   width: 30px;
+   height: 30px;
+   line-height: 30px;
+   text-align: center;
+   background-color: #ff0000;
+   border-radius: 5px;
+   margin: 0 10px 10px 0;
+}
+
+.weather .weather-logo img {
+   width: 100px;
+}
+
+.weather .weather-logo p {
+   text-align: center;
+}
+
+.weather .weather-location {
+   margin-left: 10px;
+   display: flex;
+   flex-direction: column;
+}
+
+.weather-detail {
+   width: 70%;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   flex-direction: column;
+}
+
+.weather-detail header {
+   color: #fff;
+   text-align: center;
+}
+
+.weather-detail header img {
+   width: 200px;
+}
+
+.weather-detail header h1 {
+   font-size: 3rem;
+}
+
+.weather-detail .detail {
+   width: 800px;
+   height: 350px;
+   padding: 10px 30px;
+   border-radius: 10px;
+   background-color: #fff;
+}
+
+.weather-detail .about {
+   display: flex;
+   margin-top: 25px;
+   border-bottom: 1px solid #9c999e;
+   justify-content: space-between;
+}
+
+.weather-detail .about p {
+   color: #4F4557;
+}
+
+
+
+@media only screen and (max-width: 700px) {
+   .navigation {
+      height: 100vh;
+      overflow: scroll;
+      transform: translateX(-500px);
+      position: absolute;
+      z-index: 10;
+      width: 100%;
+      transition: 0.2s;
+   }
+
+   .navigation.show {
+      transform: translateX(0);
+   }
+
+   .navigation .close i {
+      
+      display: block;
+   }
+
+   .fa-star.active {
+      color: #161e3c;
+   }
+
+   .weather-detail {
+      width: 100%;
+      height: 100vh;
+   }
+
+   .weather-detail .detail {
+      width: 100%;
+      height: 400px;
+   }
+
+   .menu i {
+      z-index: 5;
+      display: block;
+   }
+}
