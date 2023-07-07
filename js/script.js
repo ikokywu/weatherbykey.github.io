@@ -29,6 +29,7 @@ const saveToLocalStorage = () => {
 };
 
 const getWeatherData = (location, status) => {
+  console.log(localData);
   fetch(
     `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location}&aqi=no`
   )
@@ -44,18 +45,19 @@ const getWeatherData = (location, status) => {
     .then((data) => {
       dataListInfo(data, status);
     })
-    .catch(() => {
-      alert("Lokasi tidak ditemukan");
+    .catch((err) => {
+      console.log(err);
+      alert(err);
     });
 };
 
 const getListCity = () => {
   weatherList.innerHTML = "";
   for (let i = 0; i < localData.length; i++) {
+    console.log(localData[i]);
     if (i === 0) {
       getWeatherData(localData[i], "active");
     } else {
-      filter = false;
       getWeatherData(localData[i]);
     }
   }
